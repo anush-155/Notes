@@ -1,0 +1,115 @@
+MANUAL TESTING
+Static Testing : Check defects in software without executing the code, it is done through inspection, walkthrough and review. helps in finding defects early.
+Dynamic Testing : Executing the software and analysing its behaviour during runtime, with sets of data is required.
+Static Analysis : Tools check the code's structure, logic and flow, identify syntactic error, logic error, security risks, code quality, coding standard
+Black Box Testing : Validated by appearance and behaviour, no visibility of actual code. Software user's perspective, Identify presence of defect-not locating them.
+White Box Testing : Complete access and visibility of code, Programmer's perspective, locate defect and validate a fix.
+Alpha Testing : First phase of UAT testing, done internally by dev team under lab environment simulating real world, limited no. of users. Both black and white box testing.
+Beta Testing : Follows alpha testing. Done by real world users
+Functional Testing : Test the func for which the software is built
+Non-Functional Testing : Non-func aspects like performance,
+Quality Assurance : Proactive, entire process, practices are followed, involve everyone, usability, maintainability
+Quality Control : Reactive, end of production, focus on final product, involve QA
+Development Methodologies
+Retesting : test the functionalities after bug fixes
+Regression  : Test if other functionalities are working fine after a bug is fixed.
+Smoke : Test basic stability, to check if all the functionalities are working fine
+Sanity : Specific functionalities are working fine after bug fixes, in depth check
+Performance 
+SDLC  : Requirement analysis, design, Development, Testing, Deployment, Maintenance
+STLC : Requirement Analysis, Test Planning, Test case Design, Environment Setup, Test Execution, Test closure
+Bug, Defect, Error, Failure : Mistake-> Error-> defect->bug->Failure
+A mistake during development is an error, found during unit testing phase is a defect, found during testing is a bug and found during live is a failure
+Defect/Bug Life Cycle : New-assigned-open-fixed-pending retest-retest-verified-closed
+Defect Tracker : ID-title-prerequisite-description-steps to reproduce-screen shot-severity-priority-tester-developer-date assigned-date fixed
+Test Case : S.no - test scenario - test case - prerequisite - steps to be followed - test data - expected outcome - actual outcome - tester - OS version/system
+Jira : Bug tracking and defect management tool
+         - Project
+         - issue type : bug
+         - Summary : brief
+         - Description : Steps to reproduce, expected, actual outcome
+         - Priority
+         - Environment
+         - Attachment
+         - Assignee : who will fix
+Development Methodologies :
+Waterfall : Sequential approach, second step starts when first completes
+- Minimum involvement of Stakeholders
+- No confusion
+- Document focused
+- Suitable when requirement are clear
+- Changes are expensive
+- No feedback path from stakeholders
+-  Late defect detection
+-  Lengthy development cycle 
+Agile : All the phases works hand in hand.
+- Whole task is divided into smaller parts and work is done for all small parts simultaneously.
+* Follows 4 Principles
+1. People and interaction over processes and tools 
+2. Working software over comprehensive documentation
+3. Responding to change over following a plan
+4. customer collaboration over contract negotiation
+- Used when what to build is not clear.
+- Frequent updates
+- Involvement of stakeholder is high
+- Lack of formal documentation results in difficulties in maintenance.
+Initiative : Complete functionality  
+Epic :  A large body of work or major functionality which cannot be completed in a single user story.
+Story : Smaller, actionable piece of work
+Spiral : Focuses on risk management, follows both iterative development and waterfall model
+- Each of the spiral (Cycles) is one phase and contains risk analysis, planning and evaluation
+Test Logs : detailed record of everything that happened during testing. System, environment, tester, test data, network, version, time stamp. It is a specific type of test artifact created during or immediately after test execution
+Test Artifacts : Documents, tools, and outputs produced throughout the software testing lifecycle, serving as evidence of testing activities and providing valuable insights into software quality, created throughout the STLC.
+Defect leakage : When is defect is slipped into production
+Methods to prevent :
+- Start testing as early as possible.
+- Understand requirement clearly.
+- Prepare thorough test cases with standard, edge and negative test cases covering the entire functionality to be tested.
+- Use real world data whenever possible to replicate real world environment.
+- A better collaboration between developers and testers to improve requirement and coverage
+- Perform regression testing whenever there is a bug fix.
+- focus on modules which are more prone to defects.
+- keep the test cases updated.
+Traceability matrix :
+Root cause Analysis : 
+Equivalence partition : Test data is divided into equivalent parts which gives similar outcome, covers all the testcases
+- eg, for a input box of 1-100, 1 part can be 0, one can be 50 and one can be 101.
+Boundary value analysis : Testing edge cases, both positive and negative , covers entire functionality with fewer test cases as most bugs are found at boundary due to issues with comparison or off-by-one (> instead of >=)
+- eg for age group 18 to 60, BVA test cases include 17, 18, 19, 59, 60, 61
+Entry and Exit Criteria For Testing :
+- Entry criteria are the prerequisites needed to start testing, such as having a stable build, a ready test environment, and an approved test plan. Exit criteria are the conditions for ending a test phase 
+Entry Criteria
+- Functionality is documented, approved and testable
+- Necessary software, hardware, tools, environmnet are set up and ready to use.
+How to handle any QA Task :
+1. Clarify the requirement(Requirement Analysis)
+- Understand the functionality.
+- What needs to be tested.
+- Web app, mobile or hybrid.
+- Purpose of testing : func, UI, Design, End to End, Update, bug fix.
+- Success criteria
+- Input constraints : To design test data. eg. length, spelling, case sensitivity.
+2. Structure the Approach :
+Functional test cases :
+- positive and negative.
+- Boundary Value Analysis.
+Non-Func Test cases :
+- Performance, Load and Resource.
+- UI and UX (Friendliness and responsiveness)
+- Interruption.
+- Compatibility (Versions, Browsers, Devices)
+- Error Handling(Fall fast, Fall safe, Fall Gracefully)
+3. Setup Environment
+4. Test Execution
+5. Report, Document, Retest, Closure.
+Handle Functionality Failure :
+1. Gather Evidence :
+- What failed exactly.
+- When failed.
+- System details : version, browser, environment, 
+- Conditions : Network, specific steps, backend logs, API, frontend 
+2. Reproduce, simulating exact condition, collect more details.
+3. Document (Report)
+4. Collaborate and Fix
+5. Retest, Regression test
+6. Close.

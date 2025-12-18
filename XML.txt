@@ -1,0 +1,21 @@
+XML
+Extensible Markup LAnguage, both machine and human readable.
+Prolog : Optional, must be first line, not a part of XML document.
+<?XML version = "1.0" encoading = "UTF-8"?>
+SYNTAX RULES : 
+- Must contain 1 root element that is parent of all other elements
+- Have a closing tag
+- Case sensitive
+- Properly nested
+- Attribute value must be quoted in single or double inverted commas
+- comment is written as <!-- .....................................-->
+- White spaces are preserved.
+- Empty elements can also be made eg. <element></element>, self closed <element /> 
+- XML elements are extensible means can be extended to carry more data
+- Attributes are designed to contain data for an element
+  
+Attribute   both provide same data    Element
+<person gender = "male">                  <person>
+<name>Anush</name>                        <gender>male</gender>
+</person>                                              <name>Anush</name>
+                                                                <person>

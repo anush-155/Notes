@@ -1,0 +1,17 @@
+JSON
+
+- JavaScript Object Notation
+- Text only, language independent
+- Data is stored in name-value pair
+- data is separated by commas
+- can contain String, Boolean, number, array, object, null
+- object in curly brackets
+- arrays in square bracket
+A name/value pair consists of a field name (in double quotes), followed by a colon, followed by a value: eg. "firstName":"John" 
+Objects can contain multiple name/value pairs eg. {"firstName":"John", "lastName":"Doe"} 
+An array can contain objects eg.
+"employees":[
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]

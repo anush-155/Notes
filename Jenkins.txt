@@ -1,0 +1,33 @@
+Jenkins
+Download Jenkins.war file
+- CMD : Jenkins.war -httpPort=8080
+- Visit localhost: 8080 in browser, set Username and P/W
+New Item : Sekenium Framework-> Freestyle project(Maven will be used)
+- Source code management 
+    - Git can be used here 
+    - For local code
+    - None-> advance->custom workspace->set Directory
+    - Build->Add build Step->Invoke top level maven targets
+       Give maven command
+Build now
+Go to job->console output to see log
+
+Parameterize Jenkins Jobs.
+- Go to configure
+- Tick this project is paramenterize 
+- select choice parameter
+- Select parameter name and value eg. Browser : Firefox, Chrome, Edge
+- save (Build will change to build with parameters)
+- Go to configure and modify -> In maven command, change "$Variable-name"
+eg test-PRegression -Dbrowser="$Browser"
+similarly more variables can be configured
+
+Schedule Jenkins Jobs. (Keeeping the servers on)
+- Configure->Build Triggers->Build periodically
+- Setting Parameters
+  Total 5 params *****
+    1. Minutes (H denotes once per hour)
+    2. Hours
+    3. Day of the month (* denotes daily)
+    5. Month
+    Dayweek(0, 7 denotes sunday) 

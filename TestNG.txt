@@ -1,0 +1,153 @@
+TestNG
+
+- TestNG can act as a JAVA compiler.
+- TestNg needs a method.
+- @Test annotation above the method, everything below it acts a test-case.
+- Method name is test-case name (pass/fail)
+- Another @Test -> another test-case.
+- XML should be accessible from project level
+- A project can have multiple xml
+- If .java file is executed and have dependencies from xml, run xml file
+
+Right click on project -> convert to TestNG, XML file will be created automatically.
+
+XML Hierarchy
+- Test Suite > Test Folder > Test case
+- In XML file, under <classes> tag, <class> contains name of .java file.
+<class name = "test.Day1"/>
+<class name = "test.Day2"/>
+here test is package name and day2 is .java file name.
+- Right click on xml -> Run as -> testNG.
+- Test suite : all classes will run.
+- <Test name> : a module, all classes will run
+- Create modules for similar test cases.
+
+Exclude a Test Case (Method)
+- Lets say it is in test.day3
+so, 
+<classes>
+<class name = "test.day3">
+<Methods>
+<Exclude name = "MethodName"/>
+</Methods>
+</Class>
+</Classes>
+similarly, there is an <include> tag as well.
+Also works with partial text <exclude name = "Mobile.*"/> : this will exclude anything starting with mobile.
+
+To run a package
+<Suite name = " ">
+<Test name = " ">
+<Packages>
+<Package name = " "/>
+</Packages>
+</Test>
+</Suite>
+Test contains packages/ class
+Multiple tests can be made.
+
+@Before/After suite and @Before/After tests depends on xml file
+@Before/After Class works before any method inside a class.
+Scope is class level.
+
+TestNG class execution(@Test) works on alphabetical order
+
+Group Tag : Group @Test(methods) to run them 
+@Test(Group = {"Smoke"})
+<Test name=  " ">
+<Group>
+<Run>
+<Include name = "Smoke"/>
+</Run>
+</Group>
+<Classes>
+<Class name  = " "/>
+</Class>
+</Test>
+Only @Test with Group will execute.
+As Include, exclude also works for Groups.
+
+Priority : @Test(priority=0)
+
+Depends Annotation : 
+- A method executes only after a desired method executes and pass.
+@Test(DependsOnMethod = {"MethodName1"})
+@Test method will execute after MethodName1
+- Can have multiple methods as well
+{"MethodName1", "MethodName2"})
+- Priority defines only order whereas dependsOnMethod defines order as well as dependency.
+- If 'a' test fails or skipped, 'b' will also be skipped.
+
+@Test(enabled = false)
+This method will be skipped.
+@Test(timeOut = 4000) : Don't fail before 4000ms
+
+@Parameters
+- Given in xml file
+- For global use, give parameters after suite
+  <Suite name = " ">
+  <parameter name = "URL" value = "123@abc.com">
+  - In class
+  @Parameters ({URL})
+  @Test
+  MethodName (String abc){  // this abc will catch URL
+  syso(abc)}
+For test level : give params after test
+<Test name = " ">
+<Parameter name  = "URL" value = "person345.com"/>
+If same name, test params will override global params, here person345.com will pass, multiple params can also be sent.
+
+@DataProvider -> create a method.
+public object getData () {
+object[][] data = new Object[3][2]; // here 3 is the no of times test runs.
+    User1 password 1
+    User2 password 2
+    User3 password 3
+
+   return data
+  }
+    In test Method
+    @Test(DataProvider = "getData")
+    public vid MethodName (String name, String Password).
+Strings and HashMap can also be sent using data provider.
+
+Listeners : When a test fails, a method will run automatically. ITestListeners is an interface which implements TestNG Listeners.
+- Create a class for listeners
+  public class Listeners implements ITestListeners {}  // first import ITestListeners and then Listeners(add unimplemented methods)
+  Give location of listeners class in XML
+<Suite name = " ">
+<Listeners>
+<Listener name = "package_name.Listeners"/>
+</Listeners>
+<test name = "....">
+- A listener method has parameter 
+ public void OnTestFailure (ITestResult result) {} // this result object can be used to find which test fails
+ syso(result.getName());
+
+Run Parallel test (Used in performance testing)
+<Suite name = "  " parallel = "Tests" thread-count = "2">
+Same can be used for classes
+<Test name = " " parallel = "Classes" Thread-count = "3">
+
+TestNG Report : format : index.html -> Refresh project -> test output -> index.html -> copy as path -> open in Browser.
+
+FrameWork : 
+Artifact ID : Project name
+Group ID : Upper Hierarchy (eg. company name)
+- For quick start : GroupID -> org.apache.maven.arch, Artifact ID -> maven-arch-quickstart.
+
+Page Object Model : Create different .java files for different pages. eg. login -> ATC -> Checkout
+- Every Page is a class 
+- Every WebElement is a variable 
+- Every action on the webpage is a method.
+* How to send webdriver in class2
+  - Create a constructor in class2 with parameter
+     Webdriver driver;
+     public class2 (WebDriver driver)
+          this.driver = driver;
+   - In class1, create an object for class2 with driver as a parameter
+      Class2 obj = new Class2(driver);
+ - POM should not have any data sets.
+ - For reusable codes (like wait), make a separate class, in this class, make different methods.
+ - This class is parent for all page object classes.   
+ 

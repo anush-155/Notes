@@ -1,0 +1,223 @@
+SELENIUM
+
+-All the commands are translated into HTTP request following W3C protocol
+
+-Driver acts as an agent between real browser and request, it controls the actual browser
+
+WebDriver : It is an interface with empty body, gives set of browser automation methods, ChromeDriver is an 
+   implementation.
+
+-Locator :  Used to find element on a webpage.
+                    ID, Name, ClassName, TagName, LinkText, PartialLinkText, Xpath, CssSelector.
+
+-Dependencies : external libraries or modules that a project needs to work. They provide pre-written code or functionality so
+   we don’t have to write everything from scratch. 
+
+-Web driver :  Selenium interface which contains methods to interact with web elements. 
+
+-DOM : Document object model is a tree created by browser using HTML. JS can add elements in DOM, selenium interacts 
+   with DOM, not the html. It consists of document node(Entire page), attribute node(ID, Class), element node(<div>, <a>),  
+   text node(actual text)
+
+-Driver.get : opens link without creating history always
+-Driver.navigate()to() : Opens link but creates history so forward, back can be used.
+ 
+-EXCEPTIONS 
+1. No such element exception : Selenium cannot find the element in DOM.
+2. Element Not Intractable : selenium found the element but it is not executable yes (click, sendkeys, etc.)
+    Reasons : Not yet clickable, Hidden, disable or covered by other element.
+3. Element click intercepted : An element is covered by other element hence, click is intercepted.
+    Wait for the element to be visible (selenium uses visuals as well).
+4. Stale element reference : Element was located earlier but the DOM has changed now.
+    Relocate the element.
+5. Timeout Exception : Given by explicit wait when the condition is not met in given time.
+
+
+*POM
+
+-Implicit : Only for DOM exists, If selenium cannot find an element it will keep trying until :-
+                  1. the element appears.
+                  2. Timeout 
+                Once the element is found, it proceeds immediately.
+                 It is applied globally and works for all webDriver instances.
+              driver.manage().timeouts().implicitlyWait(Duration.OFSeconds(5));
+
+-Explicit(For what and how long) : Specific condition to occur, elementvisible, clickable, titlecontains(text), titlecontains(String title), alertispresent          etc.
+               webdriverWait wait = new webdriverWait(driver, duration.OfSeconds(10));
+               wait.until(ExpectedConditions.elementTOBeClickable(by.id("ID")).click());
+  
+-Fluent : Total time out, Polling frequency, exception types to ignore.
+              Wait<WebDriver> wait = new Fluent  
+              wait<>driver().withTimeout(Duration.OFSeconds(20).poolingEvery(Duration.OFSeconds(2)).ignoring(NoSuchElement.class));
+              wait.until(ExpectedConditions.elementToBeClickable(by.id("ID")).click());
+
+-Tabs : List <String> tabs  = new Arraylist<>(driver.getWindowHandles());
+  Now this list contains all the windows details starting from index (0).
+ simple, if only 2 tabs : driver.switchTo().window(tabs.get());
+ For multiple tabs : Use loop
+  for(int i=0;i<tabs.size();i++){
+  driver.switchTo()window(tabs.get(i));
+  if(driver.getTitle().equals("Page_Name")){
+  break;    //stops where the title matches
+  }}
+
+-Alert : To simply accept or dismiss : driver.switchTo().alert().accept();
+          : To get text or send keys, use alert interface
+           Alert alert = driver.switchTo().alert();
+           alert.getText();
+           
+Popup : treat as a normal element, using locator
+Radio
+
+DropDown : There are two dropdowns
+                    1. Using select tag <select>
+                    2. Modern UIs, not using select tag.
+  1. Using select tag :
+      we have to use select class
+      WebElement drop = driver.findElement(.....);
+      Select select = new Select(drop);
+        -select.SelectByvisibleText("");
+        -select.SelectByvalue("");
+        -select.SelectByIndex(0);     
+   2. Not using select tag : 
+       Treat normally as an element, follow Click-wait-select or sendText-wait-select    
+
+Scroll : Use JSE
+  JsE js = (JsE) driver;
+ (JsE is an interface already implemented in ChromeDriver)
+  js.executeScript("window.scrollBy(x-axis, y-axis);");
+  -Scroll until element is visible
+  WebDriver element = driver.findElement(.....);
+  js.executeScript("arguments[0].scrollIntoView(true);", element);  //here true for top of the page and false for bottom.
+  
+Hover : Actions action = new Actions(driver);
+              action.moveToElement(element).perform();
+
+Keyboard actions : action class has functions for keyboard actions (.keyDown)
+
+Double click : simply .doubleClick();        
+
+Right Click is context click, is also done by context class .contextClick().perform;     
+
+Assert : imported from TestNG 
+Hard Assert : no object, script fails as soon as assert fails
+Assert.assertTrue(condition);
+Assert.assertFalse(condition);
+Assert.assertEquals(actual, expected);
+Assert.assertNotEquals(actual, expected);
+Soft Assert : Object creation : SoftAssert soft = new SoftAssert();
+soft.assertTrue(condition);
+soft.assertFalse(condition);
+soft.assertEquals(actual, expected);
+soft.assertNotEquals(actual, expected);
+
+soft.assertAll(); // mandatory
+
+
+@TestNG
+ApachePOI
+File I/O
+DataProvider
+Drag Drop
+Right Click
+Double Click
+Cookies
+Screenshot
+
+CI/CD
+
+Page Object Model (POM)
+
+Page Factory
+
+Data Providers (TestNG)
+
+Parallel Execution
+
+Selenium Grid
+
+Cross Browser Testing
+
+Headless Browser Testing (Chrome, Firefox)
+
+CI/CD Integration (Jenkins, GitHub Adctions
+
+Maven/Gradle Integration
+
+Test Reporting Allure Reports
+
+Extent Reports
+
+Handling Shadow DOM
+
+& Web Components
+
+ReferenceException Continuous Testing Setragy
+
+Real time Project Design
+
+
+
+
+
+
+
+
+
+When Class="Submit btn" -> these are two values, either can be used.
+CSS Selector :
+From Class name -> tagname.classname
+From ID -> tagname#ID
+General Syntax -> TagName[attribute='value']
+Indexing -> :nth-child(2), :nth-of-type(2)
+No // in CSS
+In place of /, space (" ") is used to find child eg. parentTagName childTagName
+Using partial CSS -> tagName[Attribute*='value'] -> when * is used, value can be partial match (for Dynamic elements)
+
+
+Xpath :
+//Tagname[@attribue='value']
+Indexing : [2]
+// -> Find parent directly 
+/ -> Child eg. //parentTagName/childTagName
+Using partial xpath -> //tagName[contains(@attribute,'value')]
+Create Xpath using Text -> //tagName[text()='value']
+Sibling : /following-sibling::tagname
+Child to parent : /parent::tagname
+    / -> should be a direct child
+	//-> can be a direct child or nested child
+	
+	//div[@class='disclosure']/button
+	target is button, first select parent tag, then descent to button,
+	Now, if we find many results, we can use indexing
+	(//div[@class='disclosure']/button)[index] (xpath index starts from 1)
+	
+	(//div[@class='disclosure']/button)[4] -> this works globally, for all the matching div+button, select the 4th matching
+	//div[@class='disclosure']/button[4] -> this works locally, for div with multiple buttons, select the 4th button
+	
+	//*[@id='username']  -> * is used if tagname is not confirmed
+	[contains(@class, 'disclosure__button')]
+	[@class = 'disclosure__button']
+so the general syntax for exact xpath is [@attribute='value'] and partial x path is [contains(@attribute, 'value')]
+
+
+CSS selector
+tagname[attribute='value'], also [attribute='value']  , if attribute is id, #value, if attribute is class, .value
+for partial match , [attribute*='value']
+for nth result [attribute='value']:nth-of-type(index) if this also gives multiple result, create a list, save all selectors and call using index eg. list <Webelement> swatch = driver.findElements(by.cssSelector("span.swatch"));
+swatch.get(0).click();   -> here first element will be 0(follows java) : here webElement is used as it is an element not text, so string will not work 
+
+
+//msg[contains(@id, 'spicegems')][1] - msg is first child of its parent
+(//msg[contains(@id, 'spicegems')])[1] - first result 
+//msg[contains(@id, 'spicegems)]/[tagname] - first child of msg
+xpath using 2 attribues : //tagName[@attribute1='value' and attribue2='value']
+
+driver.findElement(By.id(" ")); is a WebElement
+By.id(" ") is By locator, data type is By
+
+Extent reports
+
+Upload file : Check for the tag, if its File type, simply grab the element and do send keys with file location.
+- eg. : WebElement upload = driver.findElement(By.....);
+- upload.sendKeys("filePath")

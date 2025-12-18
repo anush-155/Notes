@@ -1,0 +1,268 @@
+Interview Questions
+
+Indium L2 : 9 oct 2025
+Test cases for AI flight booking agent
+Test cases for OTP verification
+Bug life cycle
+Transaction failed but amount deducted, how to handle, what are the steps
+Severity and priority example
+Latest Android and iOS version
+Defect slippage
+
+12) Explain now you can switch back trom a frame.
+
+13) What are different chromeOptions you have used and why?
+
+14) How to move from one window to another and create a new blank window (tab)?
+
+15) Why getAttribute is used? and How its different from getDomAttribute and getDomProperty?
+
+16) If their are multiple similar elements then How does WebDriver Identifies them?
+
+17) How does frames and iFrames are identified?
+
+18) How to check the color of an element?
+
+19) Why do we have 2 different sendKeys?
+
+One for action and another in Actions?
+
+20) How to simulate network conditions in Selenium WebDriver?
+
+21) If you do not accept a alert then what happens?
+
+22) When to use hard assertions and soft assertions?
+
+23) Why do we use getAriaRole() and getAccessibleName()?
+
+24) How to deselect a selected option?
+
+25) How to define page load strategies?
+
+26) How to interact with shadowRoot? (use the updated version of webdriver to answer)
+
+27) List down the top exceptions and how you solved them in Selenium WebDriver?
+) What does getDomProperty() and getDomAttribute() methods do? What is the difference?
+
+2) How to fetch all the broken links with its name and url?
+
+3) How can you bypass the issue of Element Not Found without using Try catch or throws or custom exceptions?
+
+4) What happens when there are multiple browser windows open, How do you switch between them?
+
+5) Is it possible to use same locators within Selenium WebDriver and PlayWright? If not then what will be your strategy in PlayWright?
+
+6) When should you use sendKeys() and sendKeys() from Actions Class?
+
+7) How does WebDriverWait for urlToBe() and Titlels() differs?
+
+8) How do you handle SSL certificate errors using Selenium WebDriver?
+
+9) How do you handle dynamic dropdowns and select options using Selenium WebDriver?
+
+10) How do you manage AutoFill Fields and validate the options listed?
+
+11) When should you find a URL and validate its existence on a web page? What are hidden links?
+) How do you perform right click in selenium
+
+Q3) What are the different ways to click on a button in selenium.
+
+Q4) What are java streams?
+
+Q5) Explain git pull vs fetch ?
+
+Q6) Explain your framework architecture
+
+Q7) Write a sample test script but make sure you right as per your framework structure you explained.
+
+Q8) What is Request Specification and Response Specification
+
+Q9) Explain Fluent Wait, write down syntax as well.
+
+Q10) Write a SQL Query to find the third largest salary from employees table. (can you answer in comments
+
+Round 2 (Managerial)
+
+Q1) Explain your roles and responsibilities in current project.
+
+Q2) What are the challenges you faced in your team.
+
+Q3) You want to create a new framework, how you will proceed?
+
+Q4) What is message house technique, explain it ?
+
+Q5) How will you collaborate with your team?
+
+Q6) Suppose I gave you a website, how will you proceed for automation, what questions you will ask
+
+Q7) What is your day to day task.
+
+Q8) What is Agile? How long is your sprint?
+
+Q9) API Status code 502, when it comes?
+
+Explain the structure of an automation framework
+
+2. How to connect files in Cucumber? What are hooks?
+
+3. How to run flaky test cases? (with code)
+
+4. Maven lifecycle?
+
+5. Jenkins - how to run jobs?
+
+6. Git: merge vs rebase? Handling merge conflicts?
+
+7. Git commands you have used
+
+OOPs & Java Concepts
+
+1. Abstract class vs Abstract method
+
+2. Abstract class vs Interface
+
+3. Instance variables
+
+4. OOP concepts and where you applied them in a framework
+
+Miscellaneous
+
+1. Query to find employees with salary greater than Adam's salary
+
+2. How quickly can you learn new technologies and processes?
+
+3. Strategy to rapidly improve ROI in automation?
+
+4. Write XPath expressions from given locations
+
+5. Fetch all links from a website & check broken ones
+1. Difference between 'findElement` vs `findElements`?
+
+2. How to get values from dropdowns?
+
+3. Smoke vs Sanity testing?
+
+4. Bug Life Cycle?
+
+5. Regression vs Retesting?
+
+6. How do priorities work in TestNG?
+
+7. What is the WebDriver interface?
+
+8. Implicit vs Explicit wait?
+
+9. Handling OTPs in automation?
+
+Java Programming
+
+1. Occurrences of characters in a string
+
+2. Fibonacci series program
+
+3. Print even numbers in an array → `{2,4,6}`
+
+4. Reverse a string using 'StringBuilder`
+
+5. Check if a number is a palindrome
+
+6. Remove duplicate letters from a string
+
+7. Bubble sort algorithm
+
+8. Transform ''My name is so and so'` → `'{My-name-is-so-and-so}'`
+Difference between Waterfall and Agile?
+
+1. Agile Ceremonies
+
+2. What is burndown chart?
+
+3. Found a bug in prod, what will you do?
+
+4. What is sprint backlog?
+
+5. What is sprint time?
+
+6. How do you define Releases in Agile?
+
+7. How do handle exceptions in Selenium?
+
+8. Explain different type of waits?
+
+9. Write code for explicit wait?
+
+10. Write code for launching chrome and opening a new tab.
+
+11. Write a program to swap two value without using third
+
+12. How do you handle pop up?
+
+13. What is the code for pop up?
+
+14. How to handle dropdown and get values?
+
+15. Difference between findElements and findElements?
+
+16. Difference between WindowHandle and Handles?
+
+17. How to execute multiple test in Selenium?
+
+18. Write a query to get current time.
+
+19. Write a query for getting second highest salary of an employee.
+
+20. What is API testing and how do you validate responses?
+
+21. Write xpath and what are different locators in Selenium?
+. How do you define Releases in Agile?
+
+7. How do handle exceptions in Selenium?
+
+8. Explain different type of waits?
+
+9. Write code for explicit wait?
+
+10. Write code for launching chrome and opening a new tab.
+
+11. Write a program to swap two value without using third
+
+12. How do you handle pop up?
+
+13. What is the code for pop up?
+
+14. How to handle dropdown and get values?
+
+15. Difference between findElements and findElements?
+
+16. Difference between WindowHandle and Handles?
+
+17. How to execute multiple test in Selenium?
+
+18. Write a query to get current time.
+
+19. Write a query for getting second highest salary of an employee.
+
+20. What is API testing and how do you validate responses?
+
+21. Write xpath and what are different locators in Selenium?
+
+22. Can we overload a constructor?
+
+23. What is the use of constructor in Selenium?
+
+24. Difference between class and Interface?
+
+25. How Select works in Selenium?
+1 From a table element, how do you go to the parent element?
+
+2] What is the return type of getWindowHandle() and getWindowHandles()? Does it support indexing?
+
+3] How do you run a test case multiple times, say for 5 times?
+
+4 What are the key steps you perform before writing an automation script?
+
+5 How do you identify whether it's a TDD or BDD framework just by seeing the folder structure?
+
+6 What is the usual location of the feature file in a BDD framework?
+
+7 Can you explain or draw the hierarchical diagram of a Selenium-based BDD/TDD type framework

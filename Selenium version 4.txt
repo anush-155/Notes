@@ -1,0 +1,10 @@
+version 4 selenium
+
+get dimensions : int height = name.getRect().getDimensions().getWidth();
+get screenshot of element : WebElement textbox = driver.find..();
+File ss = textBox.getScreenshotAs(OutputType.File);
+Fileutils.copyFile(ss, new File(location));
+New window or tab  : driver.switchTo().newWindow(WindowType.TAB);
+Relative locators
+
+

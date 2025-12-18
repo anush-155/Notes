@@ -1,0 +1,103 @@
+API 
+MONOLITHIC ARCHITECTURE : sw development approach where entire app is build as a single, self-contained unit with a unified codebase. 
+  - single codebase
+  - tightly coupled components 
+  - single deployment unit
+  - single database, usually.
+Advantages : 
+  - Simpler initial development, ease of deployment, easy bug fix, efficient communication
+Disadvantages :
+  - Scalability, reliability, higher maintenance cost 
+MICROSERVICES : all the services are divided into smaller services which interact with each other using APIs
+API : Application programming interface - collection of functions and procedures which allow us to communicate two applications or libraries, connect frontend to backend.
+Authentication : Validating a user/ Identification (Password, Token, Biometric)
+Authorization : Allowing certain actions. 
+Need for Authorization : 
+- Track who is making requests
+- Track usage of API
+- Apply different permission level to different user.
+Types of Authorization :
+API Key : Long string used, usually included either in request URL or request header.
+- Identifies the person making API calls
+- PUBLIC KEY : usually include in request
+- PRIVATE KEY : Used only in server to server communication.
+Basic Auth : Places username, password in the request header.
+- Encoded un and pw using base64
+- Uses HTTPs
+- When server receives the request, decrypts the message and examine the header
+HMAC : Hash based message authorization code
+- Sender and receiver knows a secret key
+- Msg is encoded using secret key and passed through SHA(Secure Hashing Algorithm)
+- The result value, as a signature is placed in request header
+- The receiver uses the same system property and SHA to generate same string.
+
+Components of API :  Endpoints, Methods, Header, parameter, Response code.
+Token : String of codes containing data that verifies a specific user.
+
+REST : representational state transfer : architectural style, any API that follows six constraints (rules)
+1. Uniform Interface 
+2. Stateless
+3. Cacheable
+4. Client-Server 
+5. Layered System
+6. Code on Demand
+
+SOAP : Protocol, transfer information, uses XML, WS security and SSL, requires more resources and bandwidth, cannot be cached
+REST : Architectural style, access a resource for data, plain text, HTML, XML, JSON, supports SSL and HTTPS, fewer resources and is lightweight, can be cached.
+
+HTTP codes.
+1×× Informational
+100 Continue
+101 Switching Protocols
+102 Processing
+103 Early Hints
+2×× Success
+200 OK
+201 Created (Post, Put)
+202 Accepted (Received, not acted)
+204 No Content
+3×× Redirection
+300 Multiple Choices
+301 Moved Permanently
+302 Found
+304 Not Modified
+305 Use Proxy
+307 Temporary Redirect
+308 Permanent Redirect
+4×× Client Error
+400 Bad Request
+401 Unauthorized
+403 Forbidden
+404 Not Found
+405 Method Not Allowed
+5×× Server Error
+500 Internal Server Error
+501 Not Implemented
+502 Bad Gateway
+503 Service Unavailable (maintenance, overload)
+504 Gateway Timeout
+
+HTTP Methods (CRUD : Create, Read, Update, Delete)
+GET : Fetch details
+POST : New entry, body optional
+PUT : Update (whole info)
+PATCH : Partial update
+DELETE : Delete
+POSTMAN : 
+/collections/all : path parameter
+?key=value : Query parameter (Sent by client)
+HEADER : Meta information, key-value pairs
+
+Import : chrome-> Dev tools-> copy as cRUD-> import in postman
+
+
+SCRIBBLE
+get 200: url dala, hit 
+reesponse body : 
+to check : status code,  time taken,
+validate some field like title, name etc
+Post 201 : URL, inside body, raw , json add data () data to be sent , hit enter, check the sent details in response, code, time, functionality (Like an id is created)
+put 200 : same as post, update entry
+delete, response code can be 200 as well as 204
+Invalid : 
+404 not found, json body can be {} : empty json object as resource doesn't exist

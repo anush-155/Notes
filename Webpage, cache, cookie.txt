@@ -1,0 +1,36 @@
+How a WebPage loads, CACHE, COOKIES, REDIRECTION
+First the browser checks for the cached version(Stored in browser memory)
+If not, it initiates a DNS lookup to find IP address associated with the domain.
+Once an IP address is obtained, the browser establishes a transmission control protocol(TCP) connection with the server hosting the website.
+If the website uses HTTPs, a TLS/SSL handshake is performed to establish a secure connection.
+The browser sends an HTTP request, the server sends back HTTP response along with HTML, CSS, JS, images etc.
+The browser parses HTML, create DOM, CSS, JS create CSSOM and execute JS code.
+Resources are loaded and rendered
+
+CACHE 
+Speeds page loading.
+Image, script, files, webpages.
+Expiry depends on cache setting.
+Uses browser storage.
+Less privacy concern.
+
+COOKIES
+Stores user specific information.
+Login data, preferences, tracking IDs.
+Expiry can be session based or persistent.
+Stored in browser's cookie storage.
+Can be used for tracking.
+
+REDIRECTION.
+User's IP is collected.
+The IP is compared to a database()  which verifies where the user is from.
+
+Types of redirection :
+301 Redirect : The server responses with a 301 along with new URL.
+Automatic redirection by the browser without users intervention.
+Permanent, SEO friendly, fast, invisible to users.
+HTML redirect :
+Uses an HTM metatag in <HEAD>
+Contains new URl and a time delay (can be 0).
+HTTP response is OK(200)
+Slower than 301..

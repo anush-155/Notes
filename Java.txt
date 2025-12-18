@@ -1,0 +1,215 @@
+JAVA
+
+Keyword : Reserved words whose values are already defined and cannot be used as identifiers eg. class, int.
+Identifier : User defined variables x. class_name, method_name.
+Operator : +, -, /, * etc.
+Separator : {, }, ;
+Literals : Literals are values eg. x=10;
+New : Keyword used to create objects in java
+Variables : Used to store values, 3 types :-
+Static : Belongs to class, accessed using class name/ object.
+Local : Inside method, constructor or block. Created when method is called and                    destroyed when method exits.
+Instance : Inside class, has its own copy, accessed via object.
+Type Casting : Changing one data type to another.
+Implicit : Small to big, done by compiler automatically.
+Explicit : Big to small, data loss. eg.
+double x = 10.5; 
+int y =(int) x;
+Static : Belongs to a class, Can access non-static via object creation. 
+Non-Static : Belongs to an object, can access both.
+Class : Blueprint for object, collection of objects and logical entity
+ - Doesn't take space
+ - Define common characteristics (Attributes) and behaviour (Methods) that all object of the class will have.
+Object : Instance of class, it is a real world entity or realization of class blue print
+eg. Class - student, attribute - ID, Method - write
+Object - Alice, 101, write(essay)
+-> class Student {
+String name;
+int id;
+void writeEssay() { //method, line of code }
+}} 
+public class main{
+psvm(){
+//Create object "Alice" of class Student
+Student alice = new Student();
+//Set Values
+alice.name ="Alice";
+alice.id  = 101;
+//Call method
+alice.writeEssay();
+}}
+- Only one class can be public.
+- A class can be static only when it is a nested class.
+- Outer class name will be the name of the .java file, this class will contain main method.
+Methods : Block of statement to perform a task
+- Access modifier return-type name (type arg/ param) {
+//Block of code 
+return; }
+eg public int sum(int a, int b(input parameters)){
+int c = a+b;
+return c; (Output of function)
+psvm() {
+int d(output of function, saved in d) = sum(x,y(parameters sent to function));
+Switch : Alternative to if-elseif-else chain
+eg.    int day = 3;
+         String dayName;
+       switch (day) { 
+               case 1:
+               dayName = "Monday";
+               break;
+           case 2:
+               dayName = "Tuesday";
+               break;
+           default:
+               dayName = "Invalid day";
+               break;
+
+Break : Stops the loop when condition fulfills
+eg. (i=0; i<10; i++){
+if (i==3){
+break ; }
+syso(i) ; }}
+- Output -> 0,1,2
+Continue : Skips the loop for one iteration when condition fulfills.
+eg. (i=0; i<10; i++){
+if (i==3){
+continue ; }
+syso(i) ; }}
+- Output -> 0,1,2,4,5,6,7,8,9
+
+Constructor : Special methods used to initialize objects when they are created, created automatically when an object is created using "New" keyword.
+RULES :
+- Same name as Class
+- No return type, not even void.
+- Parameterized or non-parameterized.
+This : Reference to current object, the object whose method or constructor is being called.
+USES :
+1. To differentiate between instance variable and local variable - When method parameter and instance variable have same name, this specifies that we are referring to instance variable.
+Assign parameter value to instance variable.
+2. Can be used to invoke current class method/constructor - Also called method chaining
+- Compiler automatically adds "this" when calling a method inside a method.
+eg. void display(){...........}
+       void show(){this.display();} //this here is added automatically.
+        obj.show();
+eg. demo(){................} // non-parameterized constructor
+       demo(int a){.............} // parameterized constructor
+       this(); //calls parameterized constructor
+       this(5); // calls non-parameterized constructor 
+Array : Is an object, Similar data, fixed size, Homogeneous data, contiguous memory, indexing, direct access, mutable. eg. int[] no = new int[]{1,2,3,4}; 'or' int[] no = new int{1,2,3,4};
+String : Immutable, object, String pool in heap memory, double quotes for elements.
+ArrayList : ArrayList <Data type> name = new ArrayList<>();
+- Takes wrapper class(Primitive data type to object) eg. Integer, Double, Character
+- Dynamic memory allocation 
+- Better for reading data 0(1)
+- Slow for data manipulation 0(n)
+- Stores elements in array
+- Takes less memory(compared to linked list)
+- When an element is added , corresponding elements shift.
+- add(), add(index, value), set(index, value), get(index), size(),
+ clear(), remove(index), remove(value).
+- has contains() method which gives boolean value (for assertion)
+PRINT ARRAYLIST
+1. Using for each Loop
+    for(int i : name) { // int - datatype, name- name of arraylist
+    syso(i); }
+2.  Using for loop 
+     for (int i = 0; i<name.size(); i++){
+syso(name.get(i)) ;}
+LinkedList : LinkedList <Data type> name = new LinkedList<>();
+- Elements and pointers are saved in nodes.
+- Dynamic memory allocation
+- Takes more memory (value + address of next node)
+- Can be single linked, doubled linked, circular
+- Pointers gives  address of next node (or previous too)
+- Last pointer addresses to null.
+- Slow in accessing data 0(n)
+- Fast in data manipulation 0(1)
+- When an element is added in between, only pointer address changes to new node unlike arraylist where all the corresponding elements shifts
+- Same operations as arraylist
+- String can be printed directly - syso(name);
+Set : Interface that doesn't allow duplicate
+- Hashset : fast, unordered.
+- Treeset : Always in order.
+- Linkedhashset : Follows insertion order
+eg. Hashmap<Type> name = new Hashmap<>();
+Map : It is also an interface, stores data as key-value pair.
+- Key is unique, value can be duplicate.
+- If element with unique key is added using previous key, it overwrites.
+- Hashmap : No order guarantee.
+- Treemap : sorted by keys.
+- Linkedhashmap : Follows order of insertion.
+eg. Linkedhashmap<key-type, value-type> name = new linkedhashmap<>();
+
+OOPS : Uses object to structure software.
+The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
+
+Encapsulation : Encapsulation is used to hide the implementation part and show the functionality for better readability and usability, we bind the data members and methods into a single unit. Protects data from unauthorised user.
+- Create private variable in a class
+- To access these private variables, a public get/set method is created in the class where private variables are declared.
+- This method is called to get/set values of private variables.
+eg.  public int getA(){
+        return a ;  }
+        public void setA(int a){
+        this.a =a ; }       // first a is instance variable, second a is local variable
+Inheritance : One class takes properties of other, uses the keyword EXTENDS
+Creates parent-child/ base-derived/ super-sub relationship
+- Object of child class can be used to call methods/variable of parent class.
+- SUPER : refers to the immediate parent class, it is used in child class
+- SUPER(); is used to call parent constructor inside child constructor.
+- To call parent class method if method name is same in child and parent, super.methodName();
+- To access parent class variable when same name, super.variableName();
+Polymorphism : 
+Done using method overloading and over riding.
+METHOD OVERLOADING (Compile time Polymorphism)
+- Same method name
+- Different parameter list
+- Within same class
+- Decide at compile time
+METHOD OVER RIDING (Run time Polymorphism) 
+- Same method name and parameter
+- Different class (parent-child)
+- Needs inheritance (extends)
+- Decided at runtime
+-  @overide : optional but recommended
+-  Gate for parent class will work for child class as well
+Abstraction :
+
+
+int to String String str = String.valueOf(num); (reverse no preserving zero at last)
+Arrays.toString(char[]) → gives [0, 0, 3, 2, 1] (array format)
+new String(char[]) → joins characters into a continuous string "00321"
+Enhanced For loop:
+int[] number = {1,2,3,4,5,6};
+for(int no : number){
+syso(s); }    -> 1,2,3,4,5,6
+
+Lambda : Short function written without a name.
+- Rules : No name, No return type(Auto), works with function interface.
+Syntax : (params) -> {body}
+eg : (int a, int b) -> a=b, (name) -> syso(name)
+
+Stream() : Pipeline to process data 
+               : Take data - transform - filter - collect.
+ Structure : 1. Source - List, Arrays etc.
+                   2. Intermediate operations.
+                   3. Terminal operations.
+
+Intermediate Operations (Non Terminal)
+Return a stream and continue chaining.
+- Filter() : Keep only the matching element, remove unwanted data.
+- Map() : Convert one data type or transform element.
+- Sorted() : Sort by natural or custom order.
+                 eg. Sorted(a, b) -> Integer.compare(a.getSalary(), b.getSalary())
+ - Distinct() : Remove duplicates.          
+ - Limit() : Take first n values
+ - Skip() : Skip first N
+ 
+ Terminal Operations
+ -forEach() : perform an action for each element (print, click etc.)
+ -Collect() : Covert stream (list/map/set/string)  .collect(collectors.toSet());
+ -reduce() : combine everything to one value .reduce(0, (a, b) -> a+b);    
+ - count() : number of elements.
+ - anyMatch(), allMatch(), nonMatch()
+
+Send variables from child to parent using "super(.....)".
+Make a constructor in parent class to receive it and use "this"

@@ -1,0 +1,9 @@
+GIT
+
+Git: The software that tracks changes to your code locally on your computer.
+Repository (Repo): A project's folder managed by Git. It contains all your project files and the entire history of changes.
+GitHub: A cloud-based platform where you host (store) your Git repositories online, allowing collaboration and access from anywhere.
+Commit: A snapshot of your repository at a specific point in time. Every time you make changes, you commit them with a descriptive message.
+Push: The action of sending your local commits from your computer to the remote repository on GitHub.
+Pull/Fetch: The action of downloading the latest changes (commits) from the GitHub repository to your local computer.
+Clone: Creating a copy of the remote repository (on GitHub) onto your local computer. This is how you start working on a project for the first time on a new machine.
