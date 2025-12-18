@@ -32,9 +32,6 @@ WebDriver : It is an interface with empty body, gives set of browser automation 
     Relocate the element.
 5. Timeout Exception : Given by explicit wait when the condition is not met in given time.
 
-
-*POM
-
 -Implicit : Only for DOM exists, If selenium cannot find an element it will keep trying until :-
                   1. the element appears.
                   2. Timeout 
@@ -67,7 +64,8 @@ WebDriver : It is an interface with empty body, gives set of browser automation 
            alert.getText();
            
 Popup : treat as a normal element, using locator
-Radio
+
+Radio button : use as normanl element, using locator 
 
 DropDown : There are two dropdowns
                     1. Using select tag <select>
@@ -94,6 +92,17 @@ Hover : Actions action = new Actions(driver);
               action.moveToElement(element).perform();
 
 Keyboard actions : action class has functions for keyboard actions (.keyDown)
+WebElement inputBox = driver.findElement(By.id("textBox"));
+Actions actions = new Actions(driver);
+actions.click(inputBox)
+       .keyDown(Keys.CONTROL)
+       .sendKeys("a")
+       .keyUp(Keys.CONTROL)
+       .perform();
+
+OR
+inputBox.sendKeys(Keys.CONTROL + "a");
+
 
 Double click : simply .doubleClick();        
 
@@ -105,6 +114,7 @@ Assert.assertTrue(condition);
 Assert.assertFalse(condition);
 Assert.assertEquals(actual, expected);
 Assert.assertNotEquals(actual, expected);
+
 Soft Assert : Object creation : SoftAssert soft = new SoftAssert();
 soft.assertTrue(condition);
 soft.assertFalse(condition);
@@ -114,54 +124,20 @@ soft.assertNotEquals(actual, expected);
 soft.assertAll(); // mandatory
 
 
-@TestNG
-ApachePOI
-File I/O
-DataProvider
-Drag Drop
-Right Click
-Double Click
-Cookies
-Screenshot
-
-CI/CD
-
-Page Object Model (POM)
-
-Page Factory
-
-Data Providers (TestNG)
-
-Parallel Execution
-
-Selenium Grid
-
-Cross Browser Testing
-
-Headless Browser Testing (Chrome, Firefox)
-
-CI/CD Integration (Jenkins, GitHub Adctions
-
-Maven/Gradle Integration
-
-Test Reporting Allure Reports
-
-Extent Reports
-
-Handling Shadow DOM
-
-& Web Components
-
-ReferenceException Continuous Testing Setragy
-
-Real time Project Design
 
 
+File I/O : APACHE POI for excel data driven testing
+- Using maven, add Apache dependencies
+- Create object for XSSF workbook (for .xlsx) 
+- XSSFWorkbook() will have FIS as argument
+FileInputStream fis  = new FileInputStram("c://......xlsx");
+XSSFWorkbook() wb = new XSSFWorkbook(fis);
+Rows and clls only, No column
+cannot get int value using "getStringCellValue"
 
 
-
-
-
+Screenshot : File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+                       FileUtils.copyFile(src, new File (c:/location/name.jpg));
 
 
 When Class="Submit btn" -> these are two values, either can be used.

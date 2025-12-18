@@ -31,3 +31,13 @@ Schedule Jenkins Jobs. (Keeeping the servers on)
     3. Day of the month (* denotes daily)
     5. Month
     Dayweek(0, 7 denotes sunday) 
+
+
+Run using maven : runs in terminal or cmd
+Download apache maven -> Binary zip archive -> Extract
+Configure environment variables - Edit the system environment variables -> advanced -> enironment variables
+Under system variables -> new -> variable name : MAVEN_HOME, value : location 
+Under system variables -> find path variables -> edit -> new -> set path for mavin bin -> %MAVEN_HOME%\bin
+add <build> in POM.XML for ecex-maven-plugin
+add name of package.classname in <mainclass>
+Open cmd -> change to project folder

@@ -113,7 +113,7 @@ Strings and HashMap can also be sent using data provider.
 
 Listeners : When a test fails, a method will run automatically. ITestListeners is an interface which implements TestNG Listeners.
 - Create a class for listeners
-  public class Listeners implements ITestListeners {}  // first import ITestListeners and then Listeners(add unimplemented methods)
+  public class Listeners implements ITestListeners { }  // first import ITestListeners and then Listeners(add unimplemented methods)
   Give location of listeners class in XML
 <Suite name = " ">
 <Listeners>
