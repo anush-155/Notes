@@ -95,8 +95,14 @@ eg. demo(){................} // non-parameterized constructor
        demo(int a){.............} // parameterized constructor
        this(); //calls parameterized constructor
        this(5); // calls non-parameterized constructor 
+	   
 Array : Is an object, Similar data, fixed size, Homogeneous data, contiguous memory, indexing, direct access, mutable. eg. int[] no = new int[]{1,2,3,4}; 'or' int[] no = new int{1,2,3,4};
 String : Immutable, object, String pool in heap memory, double quotes for elements.
+
+List interface : ArrayList, LinkedList, Vector
+
+
+
 ArrayList : ArrayList <Data type> name = new ArrayList<>();
 - Takes wrapper class(Primitive data type to object) eg. Integer, Double, Character
 - Dynamic memory allocation 
@@ -105,40 +111,60 @@ ArrayList : ArrayList <Data type> name = new ArrayList<>();
 - Stores elements in array
 - Takes less memory(compared to linked list)
 - When an element is added , corresponding elements shift.
-- add(), add(index, value), set(index, value), get(index), size(),
- clear(), remove(index), remove(value).
+- add(), add(index, value), set(index, value)(set replaces), get(index), size(),
+ clear(), remove(index), remove(value), contains(value)(return boolean), indexOf(value), isEmpty()(return boolean).
 - has contains() method which gives boolean value (for assertion)
 PRINT ARRAYLIST
 1. Using for each Loop
-    for(int i : name) { // int - datatype, name- name of arraylist
-    syso(i); }
+    for(int i : name) {         // int - datatype, name- name of arraylist
+    syso(i);  }
 2.  Using for loop 
      for (int i = 0; i<name.size(); i++){
 syso(name.get(i)) ;}
+
 LinkedList : LinkedList <Data type> name = new LinkedList<>();
 - Elements and pointers are saved in nodes.
 - Dynamic memory allocation
 - Takes more memory (value + address of next node)
 - Can be single linked, doubled linked, circular
-- Pointers gives  address of next node (or previous too)
+- Pointers gives address of next node (or previous too)
 - Last pointer addresses to null.
 - Slow in accessing data 0(n)
 - Fast in data manipulation 0(1)
 - When an element is added in between, only pointer address changes to new node unlike arraylist where all the corresponding elements shifts
 - Same operations as arraylist
 - String can be printed directly - syso(name);
+
 Set : Interface that doesn't allow duplicate
-- Hashset : fast, unordered.
+- Hashset : fast, unordered, doesnt have index commands.
 - Treeset : Always in order.
-- Linkedhashset : Follows insertion order
-eg. Hashmap<Type> name = new Hashmap<>();
+- Linkedhashset : Follows insertion order.
+- Iterator is used to print all elements in a collection, specially HashSet as it does not have indexes.
+Iterator<String> i = HashsetName.Literator();
+i.next();, i.next(); -> Iterates from 1->2 and so on.
+While(i.hasNext())) {
+syso(i.next());           }
+"OR"
+for(i : has.next())  {
+  syso(i);         }
+
 Map : It is also an interface, stores data as key-value pair.
+eg. Linkedhashmap<key-type, value-type> name = new linkedhashmap<>();
+- Add is not used, put is used 
+MapName.put(key, value);
+MapName.remove(key);
+MapName.entryset(); -> converts to set, save it as set. eg. Set s = MapName.entrySet();
 - Key is unique, value can be duplicate.
 - If element with unique key is added using previous key, it overwrites.
 - Hashmap : No order guarantee.
 - Treemap : sorted by keys.
 - Linkedhashmap : Follows order of insertion.
-eg. Linkedhashmap<key-type, value-type> name = new linkedhashmap<>();
+
+HashTable : HashTable<Integer, String> ht = new HashTable<>();
+HashTable is Thread safe : only one program is able to acces it at a time. 
+HashTable does not allow null. 
+In place of Iterator, enumerator is used. 
+
 
 OOPS : Uses object to structure software.
 The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
@@ -213,3 +239,15 @@ Return a stream and continue chaining.
 
 Send variables from child to parent using "super(.....)".
 Make a constructor in parent class to receive it and use "this"
+
+Exception Handling : for block of code which may fail, to continue running the script
+try { code which may have error } 
+catch (exception e ) {     // here exception is general error object and e is variable.
+    to execute if try fails eg msg  }
+- Error object have methods. eg. e.getmessage();
+- One try can have multiple catches
+- Catch always follows try
+finally : pass or fail, will always execute.
+Try and Finally can work without catch.
+eg. Close browser can be used in finally.
+If we close the execution, then only finally will not execute.

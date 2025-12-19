@@ -41,3 +41,4 @@ Under system variables -> find path variables -> edit -> new -> set path for mav
 add <build> in POM.XML for ecex-maven-plugin
 add name of package.classname in <mainclass>
 Open cmd -> change to project folder
+Dependencies should be added before build tag
