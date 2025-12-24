@@ -8,7 +8,7 @@ Literals : Literals are values eg. x=10;
 New : Keyword used to create objects in java
 Variables : Used to store values, 3 types :-
 Static : Belongs to class, accessed using class name/ object.
-Local : Inside method, constructor or block. Created when method is called and                    destroyed when method exits.
+Local : Inside method, constructor or block. Created when method is called and destroyed when method exits.
 Instance : Inside class, has its own copy, accessed via object.
 Type Casting : Changing one data type to another.
 Implicit : Small to big, done by compiler automatically.
@@ -17,6 +17,12 @@ double x = 10.5;
 int y =(int) x;
 Static : Belongs to a class, Can access non-static via object creation. 
 Non-Static : Belongs to an object, can access both.
+Access Modifier : 
+- Public : All packages
+- Private : class only
+- Protected : Same package + Inheritied (Child class)
+- Default : Same package only 
+
 Class : Blueprint for object, collection of objects and logical entity
  - Doesn't take space
  - Define common characteristics (Attributes) and behaviour (Methods) that all object of the class will have.
